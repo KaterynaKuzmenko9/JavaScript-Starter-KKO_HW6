@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  Створіть два об'єкти, використовуючи конструктор і літерал. Обидва об'єкти повинні містити властивості firstName
+        та lastName із довільними значеннями. Створіть функцію print, яка буде приймати як параметр об'єкт і виводити
+        властивості lastName і firstName отриманого об'єкта на екрані. -->
+    
+<body>
+    <script>
+        function object (firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+
+let personLiteral = {
+    firstName: "Jon",
+    
+    lastName: "Don"
+}
+
+
+function print(person) {
+    console.log("First Name: " + person.firstName);
+    console.log("Last Name: " + person.lastName);
+}
+
+
+print(new PersonConstructor("Alice", "Smith"));
+
+
+print(personLiteral);
+    </script>
+</body>
+</html>
