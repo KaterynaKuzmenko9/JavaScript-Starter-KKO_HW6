@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  Завдання:
+        Всі об'єкти в масиві користувачів мають однакову структуру.
+        Виведіть на екран:
+        1) Адреси електронної пошти всіх користувачів (email)
+        2) Ім'я та прізвище користувачів з найбільшою кількістю друзів (властивості name та friends)
+        3) Компанію користувача з найбільшим балансом та компанію користувача з найменшим балансом (властивості company
+        та balance) -->
+</head>
+<body>
+    <script>
+         // 1) Адреси електронної пошти всіх користувачів (email)
+         let allEmails = users.map(user => user.email);
+        console.log("Emails of all users:", allEmails);
+
+        // 2) Ім'я та прізвище користувачів з найбільшою кількістю друзів (властивості name та friends)
+        let userWithMostFriends = users.reduce((maxFriends, user) => (user.friends.length > maxFriends.friends.length) ? user : maxFriends, users[0]);
+        console.log("User with the most friends:", userWithMostFriends.name);
+
+        // 3) Компанію користувача з найбільшим балансом та компанію користувача з найменшим балансом (властивості company та balance)
+        let userWithMaxBalance = users.reduce((maxBalance, user) => (parseFloat(user.balance) > parseFloat(maxBalance.balance)) ? user : maxBalance, users[0]);
+        let userWithMinBalance = users.reduce((minBalance, user) => (parseFloat(user.balance) < parseFloat(minBalance.balance)) ? user : minBalance, users[0]);
+
+        console.log("Company with max balance:", userWithMaxBalance.company);
+        console.log("Company with min balance:", userWithMinBalance.company);
+    </script>
+</body>
+    </script>
+</body>
+</html>
